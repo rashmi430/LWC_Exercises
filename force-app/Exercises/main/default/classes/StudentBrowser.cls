@@ -1,6 +1,6 @@
 public with sharing class StudentBrowser {
     @AuraEnabled(cacheable=true)
-    public static List<Contact> getStudents(string instructorId,string courseDeliveryId){
+    public static List<contact> getStudents(string instructorId,string courseDeliveryId){
         
 		String query = '';
 		String scheckStatus = 'Status__c IN (\'Enrolled\', \'Completed\') ';
