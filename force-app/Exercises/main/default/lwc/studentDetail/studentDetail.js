@@ -7,16 +7,17 @@ import { getRecord,getFieldValue,getFieldDisplayValue } from 'lightning/uiRecord
 //          To prepare for Lab 1, import the Description, Email, and Phone fields and add them to the array.
 
 import FIELD_Name from '@salesforce/schema/Contact.Name';
-import Field_Description from '@salesforce/schema/Contact.Description';
-import Email from '@salesforce/schema/Contact.Email';
-import Phone from '@salesforce/schema/Contact.Phone';
-const fields = [FIELD_Name,Field_Description,FIELD_Email,FIELD_Phone];
+import FIELD_Description from '@salesforce/schema/Contact.Description';
+import FIELD_Email from '@salesforce/schema/Contact.Email';
+import FIELD_Phone from '@salesforce/schema/Contact.Phone';
+const fields = [FIELD_Name,FIELD_Description,FIELD_Email,FIELD_Phone];
 
 export default class StudentDetail extends LightningElement {
 
 	// TODO #3: locate a valid Contact ID in your scratch org and store it in the studentId property.
 	// Example: studentId = '003S000001SBAXEIA5';
-	studentId = '0032D00000ZJSfsQAH';
+	//studentId = '0032D00000ZMsjzQAD';
+    studentId = '0032D00000ZJSg4QAH';
 
 	//TODO #4: use wire service to call getRecord, passing in our studentId and array of fields.
 	//		   Store the result in a property named wiredStudent.
@@ -26,17 +27,18 @@ export default class StudentDetail extends LightningElement {
 	get name() {
 		return this._getDisplayValue(this.wiredStudent.data, FIELD_Name);
 	}
-    get Description(){
-        return this._getDisplayValue(this.wiredStudent.data, FIELD_Name);
+    get description(){
+        return this._getDisplayValue(this.wiredStudent.data, FIELD_Description);
+    }
+    get email(){
+        return this._getDisplayValue(this.wiredStudent.data, FIELD_Email);
     }
 
-    get Phone(){
-        return this._getDisplayValue(this.wiredStudent.data, FIELD_Name);
+    get phone(){
+        return this._getDisplayValue(this.wiredStudent.data, FIELD_Phone);
     }
 
-    get Email(){
-        return this._getDisplayValue(this.wiredStudent.data, FIELD_Name);
-    }
+   
 
 	//TODO #5: We provided a getter for the name field. 
 	// 		   To prepare for Lab 1, create getters for the description, phone, and email fields.
