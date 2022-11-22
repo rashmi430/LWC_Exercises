@@ -1,17 +1,31 @@
 <template>
     <div class="slds-var-m-bottom_small">
-    <lightning-card title="Filter Student" icon-name="utility:search">
+   <!-- <lightning-card title="Filter Student" icon-name="utility:search">-->
+    <lightning-card>
       <lightning-layout horizontal-align="center">
         <!--Instructors drop down -->
-          <lightning-layout-item
-            padding="around-small"
-            size="4">
-          </lightning-layout-item>
+          <lightning-layout-item>
+          <lightning-combobox
+        name="instructor"
+        label="Select instructor"
+        variant="label-hidden"
+        value={selectedInstructorId}
+        options={instructor}
+        placeholder="Select an instructor"
+        onchange={onInstructorChange}>
+      </lightning-combobox>
+    </lightning-layout-item>
 
           <!--Deliveries drop down -->
-            <lightning-layout-item
-              padding="around-small"
-              size="4">
+            <lightning-layout-item>
+            <lightning-combobox
+            name="deliverySelector"
+            label="Select Delivery"
+            variant="label-hidden"
+            value={selectedDeliveryId}
+            options={deliveries}
+            placeholder="Select a delivery"
+            onchange={onDeliveryChange}></lightning-combobox> 
             </lightning-layout-item>
       </lightning-layout>
         

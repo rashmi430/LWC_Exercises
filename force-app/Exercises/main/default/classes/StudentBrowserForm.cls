@@ -7,7 +7,7 @@ public with sharing class StudentBrowserForm {
     }
 
     @AuraEnabled(cacheable=true)
-    public static List<Course_Delivery__c> getDeliveryByInstructor(String instructorId){
+    public static List<Course_Delivery__c> getDeliveriesByInstructor(String instructorId){
         if (String.isEmpty(instructorId)) {
 			return new List<Course_Delivery__c>();
 		} else {
